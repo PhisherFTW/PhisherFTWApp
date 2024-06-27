@@ -1,10 +1,28 @@
-const express = require('express');
-const app = express();
+var http = require('http');
+const port = 3000;
+const fs = require('fs')
 
-app.get('/', function(req,res) {
-
-    res.set('Content-Type', 'text/html; charset=utf-8');
-    res.send("<h1>Hello from the other side!</h1>");
+var server = http.createServer(function(req, res) {
+    res.writeHead(200, { 'Content-Type': 'text/html' })
+    fs.readFile('index.html', function(error, data) {
+        if(error) {
+            res.writeHead(404)
+            res.write('Error: File Not Found')
+        } else {
+            res.write(data)
+        }
+        res.end()
+    })
+    ;
 });
 
-app.listen(process.env.PORT || 3000)
+
+
+server.listen(port, function (error) {
+
+    if (error) {
+        console.log('Something broke', error)
+    } else {
+        console.log('Server is listening on port ' + port)
+    }
+});
