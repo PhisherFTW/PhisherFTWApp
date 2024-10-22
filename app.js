@@ -3,6 +3,15 @@ const mysql = require("mysql");
 const port = 5000;
 const app = express();
 
+const x = 1;
+const y = 2;
+const z = 3;
+
+console.count(
+  'The value of x is ' + x + ' and has been checked .. how many times?'
+);
+
+
 const db = mysql.createConnection({
     host: 'localhost',
     port: 3306,
@@ -10,6 +19,10 @@ const db = mysql.createConnection({
     user: 'phisdvms_admin',
     password: 'veMQsLzHv2mWZ@A',
 });
+
+console.count(
+    'The value of x is ' + x + ' and has been checked .. how many times?'
+);
 
 db.connect(function(err) {
     if (err) {
@@ -31,7 +44,9 @@ app.listen(5000, () => {
 
 console.log('testing')
 
-
+console.count(
+    'The value of y is ' + y + ' and has been checked .. how many times?'
+);
 
 
 /*
