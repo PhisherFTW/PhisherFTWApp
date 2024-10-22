@@ -12,9 +12,9 @@ const db = mysql.createConnection({
 
 db.connect((error) => {
     if(error) {
-        alert(error)
+        res.send("There was an error")
     } else {
-        alert("MYSQL Connected...")
+        res.send("MYSQL Connected Successfully!")
     }
 })
 
