@@ -35,7 +35,7 @@ db.connect(function(err) {
 });
 
 app.get("/", (req, res) => {
-    res.send("<h1>Home Page</h1>");
+    res.send("<h1>Is this actually working?</h1>");
 });
 
 app.listen(5000, () => {
