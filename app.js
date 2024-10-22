@@ -1,6 +1,6 @@
 const express = require("express");
 const mysql = require("mysql");
-
+const port = 5000;
 const app = express();
 
 const db = mysql.createConnection({
@@ -10,13 +10,13 @@ const db = mysql.createConnection({
     password: 'veMQsLzHv2mWZ@A',
 });
 
-db.connect((error, res) => {
-    if(error) {
-        res.send("<h1>There was an error<h1>")
+db.connect(function(err) {
+    if (err) {
+        console.log("error occurred while connecting");
     } else {
-        res.send("<h1>MYSQL Connected Successfully!<h1>")
+        console.log("connection created with mysql successfully");
     }
-})
+});
 
 app.get("/", (req, res) => {
     res.send("<h1>Home Page</h1>")
