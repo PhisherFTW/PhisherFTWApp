@@ -13,18 +13,20 @@ const db = mysql.createConnection({
 db.connect(function(err) {
     if (err) {
         console.log("error occurred while connecting");
+        alert("Something went wrong!");
     } else {
         console.log("connection created with mysql successfully");
+        alert("Something went right!");
     }
 });
 
 app.get("/", (req, res) => {
-    res.send("<h1>Home Page</h1>")
-})
+    res.send("<h1>Home Page</h1>");
+});
 
 app.listen(5000, () => {
     console.log("Server started on Port 5000");
-})
+});
 
 
 
