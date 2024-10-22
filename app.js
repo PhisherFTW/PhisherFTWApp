@@ -1,3 +1,20 @@
+const express = require("express");
+
+const app = express();
+
+app.get("/", (req, res) => {
+    res.send("<h1>Home Page</h1>")
+})
+
+app.listen(5000, () => {
+    console.log("Server started on Port 5000");
+})
+
+
+
+
+
+/*
 var http = require('http');
 const port = 3000;
 const fs = require('fs')
@@ -26,3 +43,5 @@ server.listen(port, function (error) {
         console.log('Server is listening on port ' + port)
     }
 });
+
+*/
