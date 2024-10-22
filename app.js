@@ -4,7 +4,7 @@ const mysql = require("mysql");
 const app = express();
 
 const db = mysql.createConnection({
-    host: 'phisherftw.com',
+    host: 'localhost',
     database: 'phisdvms_APPDB',
     user: 'phisdvms_admin',
     password: 'veMQsLzHv2mWZ@A',
