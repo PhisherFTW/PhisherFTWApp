@@ -5,6 +5,7 @@ const app = express();
 
 const db = mysql.createConnection({
     host: 'localhost',
+    port: 3306,
     database: 'phisdvms_APPDB',
     user: 'phisdvms_admin',
     password: 'veMQsLzHv2mWZ@A',
