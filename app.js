@@ -10,7 +10,7 @@ const db = mysql.createConnection({
     password: 'veMQsLzHv2mWZ@A',
 });
 
-db.connect((error) => {
+db.connect((error, res) => {
     if(error) {
         res.send("<h1>There was an error<h1>")
     } else {
