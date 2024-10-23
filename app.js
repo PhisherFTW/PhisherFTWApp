@@ -36,6 +36,7 @@ db.connect(function(err) {
 
 app.get("/", (req, res) => {
     res.send("<h1>Is this actually working?</h1>");
+    console.log("testing please work!")
 });
 
 app.listen(5000, () => {
